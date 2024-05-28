@@ -20,7 +20,11 @@ stages:
     - task: Bash@3
       inputs: 
         targettype: inline
-        script: env
+        script: |
+          env
+          ls
+          pwd
+          
    
 
     
