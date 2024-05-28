@@ -25,7 +25,7 @@ stages:
           env
           ls
           pwd
-    - tasks: AzureCLI@2
+    - task: AzureCLI@2
       inputs:
         azureSubscription: 'SPN-AZURE'
         scriptType: 'bash'
