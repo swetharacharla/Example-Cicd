@@ -22,6 +22,8 @@ stages:
       inputs: 
         targettype: inline
         script: |
+          repo=${{ parameters.dockerRepository }}
+          echo "dockerregistry : $repo"
           env
           ls
           pwd
@@ -39,8 +41,7 @@ stages:
       displayName: 'Build Docker Image'
       inputs: 
         command: build
-        containerRegistry: ${{ parameters.dockerRepository}}
-        repository: nodejs
+        repository: ${{ parameters.dockerRepository }}/nodejs
         tags: $(BUILD_BUILDNUMBER)
 
           
