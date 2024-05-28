@@ -1,8 +1,12 @@
 parameters:
  - name: dockerRepository
+   displayName: DockerRepository
    type: string
+   default: 'myrepo'
  - name: dockerTag
+   displayName: DockerTag
    type: string
+   default: 'latest'
 
 stages:
 - stage: build
