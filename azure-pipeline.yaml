@@ -15,6 +15,7 @@ stages:
   - job: buildjob
     displayName: buildjob
     pool:
+     poolName: 
      vmImage: 'ubuntu-latest'
     steps:
     - task: Bash@3
@@ -24,6 +25,15 @@ stages:
           env
           ls
           pwd
+    - tasks: AzureCLI@2
+      inputs:
+        azureSubscription: 'SPN-AZURE'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          # Login to ACR
+
+          az acr login --name ${{ parameters.dockerRepository }}
           
    
 
