@@ -39,7 +39,8 @@ stages:
       displayName: 'Build Docker Image'
       inputs: 
         command: build
-        repositories: ${{ parameters.dockerRepository}}
+        containerRegistry: ${{ parameters.dockerRepository}}
+        repository: nodejs
         tags: $(BUILD_BUILDNUMBER)
 
           
