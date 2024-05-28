@@ -41,7 +41,7 @@ stages:
       displayName: 'Build Docker Image'
       inputs: 
         command: buildAndPush
-        repository: ${{ parameters.dockerRepository }}/nodejs
+        repository: ${{ parameters.dockerRepository }}.azurecr.io/nodejs
         tags: '$(Build.BuildNumber)'
 
           
